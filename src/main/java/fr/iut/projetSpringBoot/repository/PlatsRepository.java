@@ -15,9 +15,9 @@ import fr.iut.projetSpringBoot.model.Plat;
 public interface PlatsRepository extends JpaRepository<Plat, Integer> {
 
     @Query( "SELECT p FROM Plat p WHERE p.nom LIKE :x" )
-    Page<Plat> rechercheParDesignation ( @Param("x") String mc, Pageable pageable);
+    Page<Plat> rechercheParNom ( @Param("x") String mc, Pageable pageable);
 
 
-    @Query( "SELECT p FROM Plat p WHERE p.designation LIKE :x" )
-    List<Plat> rechercheParDesignation (String mc);
+    @Query( "SELECT p FROM Plat p WHERE p.nom LIKE :x" )
+    List<Plat> rechercheParNom (String mc);
 }
